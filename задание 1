@@ -8,7 +8,7 @@ int main()
 
 	int size = 1;
 	int minNum = 0;
-	int count = 1;
+	int count = 0;
 
 	cout << "Напишите количество попыток: ";
 	cin >> size;
@@ -19,14 +19,14 @@ int main()
 	{
 		cout << "Введите число: ";
 		cin >> num;
-
+		if (minNum == num)
+		{
+			count++;
+		}
 		if (num < minNum || i == 0)
 		{
 			minNum = num;
-		}
-		else if (minNum == num)
-		{
-			count++;
+			count = 0;
 		}
 	}
 
