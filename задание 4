@@ -1,35 +1,36 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-    setlocale(0, "");
-   int n;
-    cout << "Введите размер массива: ";
-    cin >> n;
+	setlocale(0, "");
 
-    int X[1];
-    cout << "Введите элементы массива: ";
-    for (int i = 0; i < n; i++) {
-        cin >> X[i];
-    }
+	const int arrsize = 12;
 
-    int max = X[0];
-    int min = X[0];
-    int maxIndex = 0;
-    int minIndex = 0;
+	int arr[arrsize]{ 5,6,6,8,3,4,11,8,7,10,11,9 };
 
-    for (int i = 1; i < n; i++) {
-        if (X[i] > max) {
-            max = X[i];
-            maxIndex = i;
-        }
-        if (X[i] < min) {
-            min = X[i];
-            minIndex = i;
-        }
-    }
+	int minNum = 0;
+	int maxNum = 0;
+	int minNumIndex = 0;
+	int maxNumIndex = 0;
 
-    cout << "Максимальный элемент: " << max << ", его индекс: " << maxIndex << endl;
-    cout << "Минимальный элемент: " << min << ", его индекс: " << minIndex << endl;
+	for (int i = 0; i < arrsize; i++)
+	{
+		if (arr[i] < minNum || i == 0)
+		{
+			minNumIndex = i;
+			minNum = arr[i];
+		}
+		else{}
 
-    return 0;
+		if (arr[i] > maxNum || i == 0)
+		{
+			maxNumIndex = i;
+			maxNum = arr[i];
+		}
+		else{}
+	}
+	cout << "Минимальное число будет: " << minNum << ", и его индекс " << minNumIndex << endl;
+	cout << "Максимальное число будет: " << maxNum << ", и его индекс " << maxNumIndex << endl;
+
+	return 0;
 }
