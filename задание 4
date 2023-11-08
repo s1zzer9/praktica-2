@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(0, "");
+   int n;
+    cout << "Введите размер массива: ";
+    cin >> n;
+
+    int X[1];
+    cout << "Введите элементы массива: ";
+    for (int i = 0; i < n; i++) {
+        cin >> X[i];
+    }
+
+    int max = X[0];
+    int min = X[0];
+    int maxIndex = 0;
+    int minIndex = 0;
+
+    for (int i = 1; i < n; i++) {
+        if (X[i] > max) {
+            max = X[i];
+            maxIndex = i;
+        }
+        if (X[i] < min) {
+            min = X[i];
+            minIndex = i;
+        }
+    }
+
+    cout << "Максимальный элемент: " << max << ", его индекс: " << maxIndex << endl;
+    cout << "Минимальный элемент: " << min << ", его индекс: " << minIndex << endl;
+
+    return 0;
+}
