@@ -8,7 +8,7 @@ int main()
 
 	int size = 1;
 	int minNum = 0;
-	int count = 0;
+	int count = 1;
 
 	cout << "Напишите количество попыток: ";
 	cin >> size;
